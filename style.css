@@ -1,0 +1,105 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Container & Controls */
+.container {
+  text-align: center;
+}
+.controls {
+  margin-bottom: 20px;
+}
+button {
+  background: #008CBA;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  margin: 5px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button:hover {
+  background: #005f73;
+}
+.difficulty {
+  margin-top: 10px;
+}
+#timer {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+/* Sudoku Board Grid */
+.sudoku-board {
+  display: grid;
+  grid-template-columns: repeat(9, 50px);
+  grid-template-rows: repeat(9, 50px);
+  gap: 1px;
+  background: #333;
+  padding: 1px;
+}
+
+/* Each Cell */
+.cell {
+  position: relative;
+  background: #fff;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  user-select: none;
+}
+.cell.selected {
+  outline: 2px solid #008CBA;
+}
+.cell.prefilled {
+  background: #e0e0e0;
+  font-weight: bold;
+  cursor: default;
+}
+.cell.hint {
+  background: #d0f0d0;
+  font-weight: bold;
+  cursor: default;
+}
+
+/* Final Value Display */
+.cell .value {
+  font-size: 24px;
+  line-height: 50px;
+}
+
+/* Pencil Notes (smaller grid in cell) */
+.cell .notes {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  font-size: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  color: gray;
+  pointer-events: none;
+}
+
+/* For highlighting incorrect cells */
+.cell.incorrect {
+  background: #fbb;
+}
+.cell.correct {
+  background: #bfb;
+}
