@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sudoku Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Sudoku</h1>
+    <div class="controls">
+      <button id="newGameBtn">New Game</button>
+      <button id="checkBtn">Check</button>
+      <button id="hintBtn">Hint</button>
+      <button id="notesToggleBtn">Notes Mode: OFF</button>
+      <div class="difficulty">
+        <label for="difficultySlider">Difficulty (Empty Cells): </label>
+        <input type="range" id="difficultySlider" min="20" max="60" value="40">
+        <span id="difficultyValue">40</span>
+      </div>
+      <div id="timer">Time: 0:00</div>
+    </div>
+    <div id="sudoku-board" class="sudoku-board"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
